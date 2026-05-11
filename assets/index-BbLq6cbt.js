@@ -1,0 +1,16 @@
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=document.getElementById(`loadMeals`),t=document.getElementById(`meals`),n=document.getElementById(`cart-items`),r=document.getElementById(`subtotal`),i=document.getElementById(`final-total`),a=document.getElementById(`tip-checkbox`),o=document.getElementById(`custom-modal`),s=document.getElementById(`modal-title`),c=document.getElementById(`modal-message`),l=document.getElementById(`modal-close`),u=[],d=`https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`;function f(e,t){s.innerText=e,c.innerText=t,o.classList.add(`active`)}l.addEventListener(`click`,()=>{o.classList.remove(`active`)}),window.addEventListener(`click`,e=>{e.target===o&&o.classList.remove(`active`)}),e.addEventListener(`click`,async()=>{try{p((await(await fetch(d)).json()).meals.slice(0,12)),e.style.display=`none`}catch(e){console.error(`Error:`,e)}});function p(e){t.innerHTML=``,e.forEach(e=>{let n=parseFloat((Math.random()*30+15).toFixed(2)),r=document.createElement(`div`);r.classList.add(`meal-card`),r.innerHTML=`
+      <div class="meal-img-wrapper">
+        <img src="${e.strMealThumb}" alt="${e.strMeal}">
+      </div>
+      <h3>${e.strMeal}</h3>
+      <div class="meal-price">$${n.toFixed(2)}</div>
+      <button class="add-to-cart-btn" data-name="${e.strMeal}" data-price="${n}">
+        Add to Order
+      </button>
+    `,r.querySelector(`.add-to-cart-btn`).addEventListener(`click`,()=>{m(e.strMeal,n)}),t.appendChild(r)})}function m(e,t){u.push({name:e,price:t}),h()}function h(){n.innerHTML=``;let e=0;u.forEach((t,r)=>{e+=t.price;let i=document.createElement(`div`);i.classList.add(`cart-item`),i.innerHTML=`
+      <span class="meal-name">${t.name}</span>
+      <div class="cart-item-controls">
+        <span class="item-price">$${t.price.toFixed(2)}</span>
+        <button class="remove-btn" data-index="${r}">x</button>
+      </div>
+    `,n.appendChild(i),i.querySelector(`.remove-btn`).addEventListener(`click`,()=>{u.splice(r,1),h()})});let t=a.checked?e*.1:0,o=e+t;r.innerText=`$${e.toFixed(2)}`,i.innerText=`$${o.toFixed(2)}`}a.addEventListener(`change`,h),document.getElementById(`checkout-btn`).addEventListener(`click`,()=>{if(u.length===0){f(`Cart is Empty`,`Please select your favorite seafood dishes before confirming the order.`);return}let e=i.innerText;f(`Order Confirmed`,`Thank you! Your order for ${e} is being prepared by our chefs.`),u=[],h()});

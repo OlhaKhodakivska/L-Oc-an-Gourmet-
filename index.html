@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Poppins:wght@300;400&display=swap"
+    rel="stylesheet" />
+  <title>L'Océan Gourmet</title>
+  <script type="module" crossorigin src="/locean-gourmet/assets/index-BbLq6cbt.js"></script>
+  <link rel="stylesheet" crossorigin href="/locean-gourmet/assets/index-D6lWLRG1.css">
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <header>
+    <p class="subtitle">Fresh Catch of the Day</p>
+    <h1>L'Océan Gourmet</h1>
+    <div class="divider"></div>
+    <button id="loadMeals">View Our Menu</button>
+  </header>
+
+  <main>
+    <div id="meals"></div>
+  </main>
+
+  <aside id="cart-container" class="cart-hidden">
+    <div class="cart-content">
+      <h2>Your Order</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <p>Subtotal: <span id="subtotal">$0.00</span></p>
+        <label>
+          <input type="checkbox" id="tip-checkbox" /> Add 10% Service Charge
+        </label>
+        <hr />
+        <p class="total-price">Total: <span id="final-total">$0.00</span></p>
+        <button id="checkout-btn">Confirm Order</button>
+      </div>
+    </div>
+  </aside>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Visit Us</h3>
+        <p>123 Ocean Drive, Azure Bay</p>
+        <p>Portsmouth, PO1 3AX</p>
+      </div>
+
+      <div class="footer-section">
+        <h2 class="footer-logo">L'Océan</h2>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/locean_gourmet" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.facebook.com/locean_gourmet" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Opening Hours</h3>
+        <p>Mon - Thu: 12:00 — 23:00</p>
+        <p>Fri - Sun: 12:00 — 03:00</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 L'Océan Gourmet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="custom-modal" class="modal-overlay">
+    <div class="modal-content">
+      <h2 id="modal-title">Notification</h2>
+      <p id="modal-message"></p>
+      <div class="divider"></div>
+      <button id="modal-close">Close</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
