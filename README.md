@@ -33,7 +33,8 @@ The project delivers an immersive digital dining experience where users can brow
 ## 🛒 Shopping Cart
 
 <!-- Add cart screenshot here -->
-<img width="484" height="738" alt="Screenshot from 2026-05-12 10-45-14" src="https://github.com/user-attachments/assets/680b1a68-f260-40d9-8359-9f0d1bdd59af" />
+<img width="329" height="501" alt="Screenshot from 2026-05-12 10-48-51" src="https://github.com/user-attachments/assets/35bb1fc5-e01c-47bd-b995-4cf838ab9099" />
+
 
 
 ---
