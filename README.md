@@ -1,4 +1,4 @@
-<img width="1814" height="1080" alt="Screenshot from 2026-05-12 10-43-37" src="https://github.com/user-attachments/assets/4971bfba-4058-4b9e-9817-caef86aa32c3" /># 🌊 L'Océan Gourmet
+🌊 L'Océan Gourmet
 
 A premium seafood restaurant web application with an elegant **dark luxury aesthetic**.  
 The project delivers an immersive digital dining experience where users can browse fresh seafood dishes, manage their cart, and calculate their order total in real time.
